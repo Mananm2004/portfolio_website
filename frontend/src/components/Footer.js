@@ -51,7 +51,7 @@ const Footer = () => {
               <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary/70 rounded-lg flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-sm">R</span>
               </div>
-              <span className="font-semibold text-lg tracking-tight">Rohan Shrivastava</span>
+              <span className="font-semibold text-lg tracking-tight">Manan Malik</span>
             </div>
             <p className="text-muted-foreground leading-relaxed max-w-xs">
               Front End Developer specializing in React.js and modern web technologies. 
@@ -130,7 +130,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
             <div className="flex items-center text-sm text-muted-foreground">
-              <span>© {currentYear} Rohan Shrivastava. Made with</span>
+              <span>© {currentYear} Manan Malik. Made with</span>
               <Heart className="w-4 h-4 mx-1 text-red-500 animate-pulse" />
               <span>and</span>
               <Code className="w-4 h-4 mx-1 text-blue-500" />
