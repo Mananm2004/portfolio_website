@@ -1,9 +1,9 @@
-import React from 'react';
-import { Card } from './ui/card';
-import { Badge } from './ui/badge';
-import { Button } from './ui/button';
-import { projects } from '../mock';
-import { ExternalLink, Github, Star } from 'lucide-react';
+import React from "react";
+import { Card } from "./ui/card";
+import { Badge } from "./ui/badge";
+import { Button } from "./ui/button";
+import { projects } from "../mock";
+import { ExternalLink, Github, Star } from "lucide-react";
 
 const Projects = () => {
   return (
@@ -15,23 +15,27 @@ const Projects = () => {
             Featured <span className="font-normal">Projects</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
-            A showcase of my recent work in web development and AI-powered applications
+            A showcase of my recent work in web development and AI-powered
+            applications
           </p>
         </div>
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <Card key={project.id} className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-card/50 backdrop-blur-sm">
+            <Card
+              key={project.id}
+              className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-card/50 backdrop-blur-sm"
+            >
               {/* Project Image */}
               <div className="relative overflow-hidden">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
-                
+
                 {/* Featured Badge */}
                 {project.featured && (
                   <div className="absolute top-4 right-4">
@@ -45,11 +49,20 @@ const Projects = () => {
                 {/* Overlay Buttons */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="flex space-x-3">
-                    <Button size="sm" className="backdrop-blur-sm bg-background/90 text-foreground hover:bg-background">
+                    <Button
+                      size="sm"
+                      className="backdrop-blur-sm bg-background/90 text-foreground hover:bg-background"
+                      onClick={() => window.open(project.liveUrl, "_blank")}
+                    >
                       <ExternalLink className="w-4 h-4 mr-1" />
                       Live
                     </Button>
-                    <Button size="sm" variant="outline" className="backdrop-blur-sm bg-background/90 text-foreground hover:bg-background border-border">
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="backdrop-blur-sm bg-background/90 text-foreground hover:bg-background border-border"
+                      onClick={() => window.open(project.githubUrl, "_blank")}
+                    >
                       <Github className="w-4 h-4 mr-1" />
                       Code
                     </Button>
@@ -84,11 +97,20 @@ const Projects = () => {
 
                 {/* Action Buttons */}
                 <div className="flex space-x-2 pt-4">
-                  <Button size="sm" className="flex-1 group/btn">
+                  <Button
+                    size="sm"
+                    className="flex-1 group/btn"
+                    onClick={() => window.open(project.liveUrl, "_blank")}
+                  >
                     <ExternalLink className="w-4 h-4 mr-1 group-hover/btn:rotate-45 transition-transform" />
                     Live Demo
                   </Button>
-                  <Button size="sm" variant="outline" className="flex-1 group/btn">
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="flex-1 group/btn"
+                    onClick={() => window.open(project.githubUrl, "_blank")}
+                  >
                     <Github className="w-4 h-4 mr-1 group-hover/btn:scale-110 transition-transform" />
                     Source
                   </Button>
@@ -103,17 +125,19 @@ const Projects = () => {
           <Card className="p-8 border-0 shadow-lg bg-gradient-to-br from-accent/20 to-primary/5 backdrop-blur-sm">
             <h3 className="text-xl font-semibold mb-4">Interested in More?</h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto leading-relaxed">
-              These are just a few highlights from my portfolio. I have many more projects exploring 
-              different technologies and solving various challenges.
+              These are just a few highlights from my portfolio. I have many
+              more projects exploring different technologies and solving various
+              challenges.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="group">
+              <Button
+                className="group"
+                onClick={() =>
+                  window.open("https://github.com/Mananm2004", "_blank")
+                }
+              >
                 <Github className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
                 View All on GitHub
-              </Button>
-              <Button variant="outline" className="group">
-                <ExternalLink className="w-4 h-4 mr-2 group-hover:rotate-45 transition-transform" />
-                Visit Full Portfolio
               </Button>
             </div>
           </Card>
